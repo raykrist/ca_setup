@@ -1,0 +1,20 @@
+[ req ]
+default_bits = 2048
+prompt = no
+encrypt_key = no
+default_md = sha256
+distinguished_name = dn
+utf8 = yes
+req_extensions = v3_req
+
+[ v3_req ]
+subjectAltName = @alt_names
+
+[ dn ]
+C = NO
+O = Universitetet_i_Bergen
+CN = servernavn.uib.no
+
+[alt_names]
+DNS.1 = altnavn1.uib.no
+DNS.2 = altnavn2.uib.no
