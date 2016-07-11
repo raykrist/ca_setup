@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # Generate intermediate key
-#openssl genrsa -aes256 \
-#        -out intermediate/private/intermediate.key.pem 4096
+openssl genrsa -aes256 \
+        -out intermediate/private/intermediate.key.pem 4096
 chmod 400 intermediate/private/intermediate.key.pem
 
 # Generate intermediate cert request
-#openssl req -config intermediate/openssl.cnf -new -sha256 \
-#    -key intermediate/private/intermediate.key.pem \
-#    -out intermediate/csr/intermediate.csr.pem
+openssl req -config intermediate/openssl.cnf -new -sha256 \
+    -key intermediate/private/intermediate.key.pem \
+    -out intermediate/csr/intermediate.csr.pem
 
 # Sign with root ca
 openssl ca -config openssl.cnf -extensions v3_intermediate_ca \
