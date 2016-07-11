@@ -1,0 +1,27 @@
+HOME                    = .
+RANDFILE                = $ENV::HOME/.rnd
+
+[ req ]
+default_bits            = 2048
+default_md              = sha256
+default_keyfile         = privkey.pem
+distinguished_name      = req_distinguished_name
+prompt                  = no
+string_mask             = utf8only
+req_extensions          = v3_req
+email_in_dn             = no
+
+[ req_distinguished_name ]
+countryName                     = NO
+organizationName                = UH-IaaS
+commonName                      = dashboard.local1.intern
+emailAddress                    = raymond@uib.no
+
+[ v3_req ]
+basicConstraints = CA:FALSE
+keyUsage = digitalSignature, keyEncipherment
+subjectAltName = @alt_names
+
+[ alt_names ]
+DNS.1 = "api.local1.intern"
+
