@@ -1,5 +1,10 @@
 #/bin/bash
 
+if [ ! -f "./passfile" ]; then
+  echo "Please create a file called ./passfile with a secure password"
+  exit 1
+fi
+
 host=$1
 cnf="cnf/${host}.cnf"
 
@@ -18,4 +23,5 @@ openssl req -config ${cnf} -key intermediate/private/${host}.key.pem -new -sha25
 
 openssl ca -config intermediate/openssl.cnf -extensions v3_req \
   -days 375 -notext -md sha256 -in intermediate/csr/${host}.csr.pem \
+  -passin file:passfile \
   -out intermediate/certs/${host}.cert.pem
