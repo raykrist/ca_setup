@@ -122,6 +122,11 @@ authorityKeyIdentifier = keyid,issuer:always
 keyUsage = critical, digitalSignature, keyEncipherment
 extendedKeyUsage = serverAuth
 
+[ v3_req ]
+basicConstraints = CA:FALSE
+keyUsage = digitalSignature, keyEncipherment
+
+
 [ crl_ext ]
 # Extension for CRLs (`man x509v3_config`).
 authorityKeyIdentifier=keyid:always
