@@ -13,7 +13,7 @@ chmod 400 intermediate/private/intermediate.key.pem
 
 # Generate intermediate cert request
 openssl req -config intermediate/openssl.cnf -new -sha256 \
-    -passin file:passfile \
+    -passin file:passfile -batch \
     -key intermediate/private/intermediate.key.pem \
     -out intermediate/csr/intermediate.csr.pem
 
