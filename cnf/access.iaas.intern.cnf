@@ -13,7 +13,9 @@ subjectAltName = @alt_names
 [ dn ]
 C = NO
 O = UH-IaaS
-CN = dashboard.local1.intern
+CN = *.iaas.intern
 
 [alt_names]
-DNS.1 = api.local1.intern
+DNS.1 = dashboard.iaas.intern
+DNS.2 = access.iaas.intern
+DNS.3 = status.iaas.intern
