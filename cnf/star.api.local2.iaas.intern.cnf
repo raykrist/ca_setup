@@ -13,9 +13,9 @@ subjectAltName = @alt_names
 [ dn ]
 C = NO
 O = UH-IaaS
-CN = *.api.local1.iaas.intern
+CN = *.api.local2.iaas.intern
 
 [alt_names]
-DNS.1 =  *.api.local1.iaas.intern
-DNS.2 = api.local1.iaas.intern
+DNS.1 =  *.api.local2.iaas.intern
+DNS.2 = api.local2.iaas.intern
 
